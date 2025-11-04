@@ -1,0 +1,106 @@
+============STUDI KASUS=============
+#Evaluasi fungsi matematika
+#Berikan contoh cara menghitung fungsi dengan python tanpa numpy kemudian bandingankan ketika menggunakan numpy
+
+#fungsi tanpa menggunakan numpy
+
+#f(x) = 3 * x * 2 + 2 * x + 1
+>>> # for x = 0, 1, 2, 3, 4
+>>>
+>>> def f(x):
+...     return 3 * x * 2 + 2 * x + 1
+...
+>>> fungsi_x = [0, 1, 2, 3, 4]
+>>> fungsi = [f(x) for x in fungsi_x]
+>>> print(fungsi)
+[1, 9, 17, 25, 33]
+
+#f(x) = 3 * x**2 + 2 * x + 1
+>>> # for x = 0, 1, 2, 3, 4
+>>>
+>>> def f(x):
+...     return 3 * x**2 + 2 * x + 1
+...
+>>> fungsi_x = [0, 1, 2, 3, 4]
+>>> fungsi = [f(x) for x in fungsi_x]
+>>> print(fungsi)
+[1, 6, 17, 34, 57]
+
+#Fungsi jika menggunakan numpy
+
+>>> #f(x) = 3 * x * 2 + 2 * x + 1
+>>> # for x = 0, 1, 2, 3, 4
+>>> import numpy as np
+>>> x = np.array([0, 1, 2, 3, 4])
+>>> y = 3 * x * 2 + 2 * x + 1
+>>> print(y)
+[ 1  9 17 25 33]
+
+>>> #f(x) = 3 * x**2 + 2 * x + 1
+>>> # for x = 0, 1, 2, 3, 4
+>>> import numpy as np
+>>> x = np.array([0, 1, 2, 3, 4])
+>>> y = 3 * x**2 + 2 * x + 1
+>>> print(y)
+[ 1  6 17 34 57]
+===================TUGAS MAHASISWA=======================
+#Modifikasi fungsi fibonacci agar hasilnya disimpan dalam list dan ditampilkan sekaligua
+def fibonacci(n):
+...     if n <= 1:
+...         return n
+...     else:
+...         return fibonacci(n - 1) + fibonacci(n - 2)
+...
+>>> num = int(input("Masukan jumlah suku: "))
+Masukan jumlah suku: 8
+>>> for i in range(num):
+...     list.append(fibonacci(i))
+...
+>>> print("List Fibonacci jumlah suku:", num)
+List Fibonacci jumlah suku: 8
+>>> print("List Fibonacci: ", list)
+List Fibonacci:  [0, 1, 1, 2, 3, 5, 8, 13]
+
+#Membuat Fungsi baru untuk mencari bilangan prima antara 1-N
+>>>def fibonacci(n):
+...     if n <= 1:
+...         return n
+...     else:
+...         return fibonacci(n - 1) + fibonacci(n - 2)
+...
+>>> num = int(input("Masukan jumlah suku: "))
+Masukan jumlah suku: 8
+>>> for i in range(num):
+...     list.append(fibonacci(i))
+...
+>>> print("List Fibonacci jumlah suku:", num)
+List Fibonacci jumlah suku: 8
+>>> print("List Fibonacci: ", list)
+List Fibonacci:  [0, 1, 1, 2, 3, 5, 8, 13]
+    
+#membuat grafik perbandingan anatara fungsi linear dengan fungsi kuadrat menggunakan matplotlib
+>>>import numpy as np
+>>> import matplotlib.pyplot as plt
+>>>
+>>> def f_linear(x): return 2 * x + 3
+...
+>>> def f_kuadrat(x): return x**2 + 2 * x + 1
+...
+>>>
+>>> x = np.linspace (-5, 5, 100)
+>>>
+>>> plt.plot(x, f_linear(x), label="Linear: 2 * x + 3")
+[<matplotlib.lines.Line2D object at 0x000001F2FA718690>]
+>>> plt.plot(x, f_kuadrat(x),label="kuadrat: x**2 + 2 * x + 1")
+[<matplotlib.lines.Line2D object at 0x000001F2FA7187D0>]
+>>>
+>>> plt.title("Pebandingan fungsi linear dan fungsi kuadrat")
+Text(0.5, 1.0, 'Pebandingan fungsi linear dan fungsi kuadrat')
+>>> plt.xlabel("x")
+Text(0.5, 0, 'x')
+>>> plt.ylabel("f(x)")
+Text(0, 0.5, 'f(x)')
+>>> plt.legend()
+<matplotlib.legend.Legend object at 0x000001F2FA6AB620>
+>>> plt.grid(True)
+>>> plt.show()
